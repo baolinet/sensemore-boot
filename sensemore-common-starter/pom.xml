@@ -5,23 +5,23 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<!-- <version>3.5.0-M2</version> -->
 		<version>3.4.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
-	
-	<groupId>com.sensemore</groupId>
-	<artifactId>sensemore-boot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>sensemore-boot</name>
-	<description>Demo project for Spring Boot</description>
-	<packaging>pom</packaging>
 
-	<modules>
-		<module>sensemore-api</module>
-		<module>sensemore-core</module>
-		<!-- <module>sensemore-sms-starter</module> -->
-	</modules>
+	<!-- <parent>
+		<groupId>com.sensemore</groupId>
+		<artifactId>sensemore-boot</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent> -->
+
+	<groupId>com.sensemore.starter</groupId>
+	<artifactId>sensemore-common-starter</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>sensemore-common-starter</name>
+	<packaging>jar</packaging>
+	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>21</java.version>
@@ -29,7 +29,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
 		<dependency>
@@ -37,15 +37,25 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+	
+		<!--需要导入的依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-
+			</plugin> -->
 			<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -57,5 +67,6 @@
             </plugin>
 		</plugins>
 	</build>
+	
 
 </project>
